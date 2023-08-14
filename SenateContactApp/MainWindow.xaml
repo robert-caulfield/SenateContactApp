@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SenateContactApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600" MinWidth="600" MinHeight="400">
+        Title="Senate Contact App" Height="400" Width="600" MinWidth="600" MinHeight="400" Icon="/thumbnail.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="103*"/>
             <ColumnDefinition Width="197*"/>
-            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="258*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="23*"/>
@@ -18,25 +19,25 @@
         </Grid.RowDefinitions>
 
         <ComboBox TabIndex="2" Margin="10,101,10,0" Grid.Row="1" VerticalAlignment="Top" Height="22" Grid.Column="1" ItemsSource="{Binding StateList}" SelectedValue="{Binding StateFilter, Mode=TwoWay}"/>
-        <Label Grid.Column="2" Content="First Name" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="67"/>
-        <TextBox Grid.Column="2" Margin="82,18,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.FirstName, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="First Name" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="67" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,18,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.FirstName, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
         <ListBox x:Name="SenatorListBox" DisplayMemberPath="FullMember" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,164,10,10" ItemsSource="{Binding SenatorListFiltered}" Grid.ColumnSpan="2"/>
-        <Label Grid.Column="2" Content="Last Name" HorizontalAlignment="Left" Margin="10,40,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="66"/>
-        <TextBox Grid.Column="2" Margin="82,44,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.LastName, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
-        <Label Grid.Column="2" Content="Party" HorizontalAlignment="Left" Margin="10,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="36"/>
-        <TextBox Grid.Column="2" Margin="82,69,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.PartyFull, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
-        <Label Grid.Column="2" Content="State" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="37"/>
-        <TextBox Grid.Column="2" Margin="82,95,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.State, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
-        <Label Grid.Column="2" Content="Address" HorizontalAlignment="Left" Margin="10,160,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="53"/>
-        <TextBox Grid.Column="2" Margin="82,164,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Address, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
-        <Label Grid.Column="2" Content="Phone" HorizontalAlignment="Left" Margin="10,183,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="44"/>
-        <TextBox Grid.Column="2" Margin="82,187,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Phone, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
-        <Label Grid.Column="2" Content="Email" HorizontalAlignment="Left" Margin="10,206,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="38"/>
-        <TextBox Grid.Column="2" Margin="82,210,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Email, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
-        <Label Grid.Column="2" Content="Website" HorizontalAlignment="Left" Margin="10,229,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="52"/>
-        <TextBox Grid.Column="2" Margin="82,233,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Website, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
-        <Label Grid.Column="2" Content="Contact" Grid.Row="1" FontSize="16" HorizontalContentAlignment="Center" FontWeight="ExtraBold" VerticalContentAlignment="Center" MinWidth="300" MinHeight="29.0241666666667" VerticalAlignment="Top" Margin="0,129,0,0" Height="31"/>
-        <Label Grid.Column="2" Content="Senator" FontSize="16" HorizontalContentAlignment="Center" FontWeight="ExtraBold" VerticalContentAlignment="Center" MinWidth="300" MinHeight="29.0241666666667" VerticalAlignment="Top" Margin="0,6,0,0" Grid.RowSpan="2" Height="31"/>
+        <Label Grid.Column="2" Content="Last Name" HorizontalAlignment="Left" Margin="10,40,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="66" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,44,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.LastName, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="Party" HorizontalAlignment="Left" Margin="10,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="36" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,69,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.PartyFull, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="State" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="37" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,95,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.State, ElementName=SenatorListBox, Mode=OneWay}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="Address" HorizontalAlignment="Left" Margin="10,160,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="53" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,164,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Address, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="Phone" HorizontalAlignment="Left" Margin="10,183,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="44" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,187,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Phone, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="Email" HorizontalAlignment="Left" Margin="10,206,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="38" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,210,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Email, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="Website" HorizontalAlignment="Left" Margin="10,229,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="52" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="3" Margin="40,233,10,0" Grid.Row="1" VerticalAlignment="Top" Text="{Binding SelectedItem.Website, ElementName=SenatorListBox}" IsReadOnly="True" Height="18"/>
+        <Label Grid.Column="2" Content="Contact" Grid.Row="1" FontSize="16" HorizontalContentAlignment="Center" FontWeight="ExtraBold" VerticalContentAlignment="Center" MinWidth="300" MinHeight="29.0241666666667" VerticalAlignment="Top" Margin="0,129,0,0" Height="31" Grid.ColumnSpan="2"/>
+        <Label Grid.Column="2" Content="Senator" FontSize="16" HorizontalContentAlignment="Center" FontWeight="ExtraBold" VerticalContentAlignment="Center" MinWidth="300" MinHeight="29.0241666666667" VerticalAlignment="Top" Margin="0,6,0,0" Grid.RowSpan="2" Height="31" Grid.ColumnSpan="2"/>
         <Label Content="State Filter" Margin="0,99,0,0" Grid.Row="1" HorizontalAlignment="Center" Width="120" Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="textBox" Grid.Column="1" TabIndex="1" Margin="10,78,10,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding NameSearchText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         <Button TabIndex="3" Content="Clear Filters" Margin="10,128,10,0" Grid.Row="1" Grid.ColumnSpan="2" Height="31" VerticalAlignment="Top" Command="{Binding ClearFilterCommand}"/>
